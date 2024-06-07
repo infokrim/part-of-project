@@ -1,6 +1,12 @@
 ﻿# Récupérer Hash mot de passe administrateur dans windows server 2022
 
+
+Etant bloqué sur le décryptage de hachage de type yescrypt, nous avons décidé de contourner le problème par l'intermédiaire de l'application Mimikatz. Cet outil permet de récupérer le mots de passe en SHA1 ce qui enlève le problème du hachage de type yescrypt que nous pensions indéchiffrable par l'intermédiaire de John The Ripper.
+
+
 Mimikatz est une alternative puissante pour extraire les hachages de mots de passe. Voici comment l'utiliser sur Windows Server 2022 :
+
+
 
 1. **Télécharger Mimikatz :**
    -  Aller sur le dépôt GitHub officiel de Mimikatz : [Mimikatz GitHub](https://github.com/gentilkiwi/mimikatz).
@@ -139,4 +145,4 @@ C'est le hachage SHA1 du mot de passe de l'utilisateur Administrator.
 
 Les informations sous dpapi montrent que des données protégées par la Data Protection API peuvent être présentes.
 
-**Conclusion** : il ne reste plus qu’à se connecter en SSH à windows server 2022 pour transférer ce mot de passe et le tester
+**Conclusion** : il ne reste plus qu’à se connecter en SSH à windows server 2022 pour transférer ce mot de passe de type SHA1 et le déchiffrer
