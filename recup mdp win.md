@@ -3,11 +3,9 @@
 Mimikatz est une alternative puissante pour extraire les hachages de mots de passe. Voici comment l'utiliser sur Windows Server 2022 :
 
 1. **Télécharger Mimikatz :**
-   1. Aller sur le dépôt GitHub officiel de Mimikatz : [Mimikatz GitHub](https://github.com/gentilkiwi/mimikatz).
+   -  Aller sur le dépôt GitHub officiel de Mimikatz : [Mimikatz GitHub](https://github.com/gentilkiwi/mimikatz).
 
-![Une image contenant texte, capture d’écran, logiciel, nombre
-
-Description générée automatiquement](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.001.png)
+![Une image contenant texte, capture d’écran, logiciel, nombre Description générée automatiquement](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.001.png)
 
 
 
@@ -32,13 +30,11 @@ Si on ouvre le fichier Readme de Mimikatz, on constate qu’il est très bien ex
 
 
 1. <a name="_hlk168611094"></a>**Préparer Mimikatz :**
-   1. Décompresser le fichier téléchargé dans un répertoire accessible, par exemple C:\tools\mimikatz
+- Décompresser le fichier téléchargé dans un répertoire accessible, par exemple C:\tools\mimikatz
 1. **Exécuter Mimikatz avec des privilèges administratifs** 
 - <a name="_hlk168613955"></a> Ouvrir l'invite de commande en tant qu'administrateur
 
-![Une image contenant texte, capture d’écran, logiciel, Logiciel multimédia
-
-Description générée automatiquement](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.003.png)
+ ![Une image contenant texte, capture d’écran, logiciel, Logiciel multimédia Description générée automatiquement](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.003.png)
 
 
 
@@ -46,8 +42,9 @@ Description générée automatiquement](Aspose.Words.8cb24193-fe33-4169-932b-8a9
 
 
 
-- ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.004.png)Se rendre dans le répertoire de Mimikatz
+- Se rendre dans le répertoire de Mimikatz
 
+ ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.004.png)
 
 
 
@@ -56,17 +53,21 @@ Description générée automatiquement](Aspose.Words.8cb24193-fe33-4169-932b-8a9
 
 - Exécuter Mimikatz
 
-  ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.005.png)
+ ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.005.png)
 
 
-- ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.006.png)Voici le terminal Mimikatz une fois lancé
+- Voici le terminal Mimikatz une fois lancé
+  
+ ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.006.png)
 
 
 
 
 
 
-- ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.007.png)Taper la première commande
+- Taper la première commande
+  
+ ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.007.png)
 
 
 
@@ -84,12 +85,12 @@ La commande ` privilege::debug ` dans Mimikatz sert à activer le privilège «�
 
 - Taper la deuxième et dernière commande
 
-  ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.008.png)
+ ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.008.png)
 
 
 
 
-  La commande sekurlsa dans Mimikatz est une commande qui permet d'accéder aux informations relatives aux processus d'authentification en mémoire sur un système Windows. Elle est principalement utilisée pour extraire les informations de connexion, telles que les hachages de mots de passe, les tickets Kerberos, et d'autres données sensibles stockées par le système pour gérer les authentifications.
+La commande sekurlsa dans Mimikatz est une commande qui permet d'accéder aux informations relatives aux processus d'authentification en mémoire sur un système Windows. Elle est principalement utilisée pour extraire les informations de connexion, telles que les hachages de mots de passe, les tickets Kerberos, et d'autres données sensibles stockées par le système pour gérer les authentifications.
 
 **Détails sur sekurlsa**
 
@@ -98,26 +99,26 @@ La commande ` privilege::debug ` dans Mimikatz sert à activer le privilège «�
 
 **Principales sous-commandes de sekurlsa**
 
-1. **sekurlsa::logonpasswords** :
+1. **` sekurlsa::logonpasswords `** :
 
-   Cette sous-commande extrait les informations de connexion stockées en mémoire, y compris les hachages de mots de passe et, dans certains cas, les mots de passe en clair des comptes utilisateur.
+Cette sous-commande extrait les informations de connexion stockées en mémoire, y compris les hachages de mots de passe et, dans certains cas, les mots de passe en clair des comptes utilisateur.
 
-1. **sekurlsa::tickets** :
+1. **` sekurlsa::tickets `** :
 
-   Elle permet d'afficher les tickets Kerberos (TGT et TGS) actuellement disponibles sur le système. Ces tickets peuvent être utilisés pour accéder à des ressources réseau.
+Elle permet d'afficher les tickets Kerberos (TGT et TGS) actuellement disponibles sur le système. Ces tickets peuvent être utilisés pour accéder à des ressources réseau.
 
 
-1. **sekurlsa::pth** :
+1. **` sekurlsa::pth `** :
 
-   Utilisé pour l'authentification Pass-the-Hash, cette sous-commande permet de créer un jeton d'accès en utilisant un hachage de mot de passe plutôt que le mot de passe en clair.
+Utilisé pour l'authentification Pass-the-Hash, cette sous-commande permet de créer un jeton d'accès en utilisant un hachage de mot de passe plutôt que le mot de passe en clair.
 
-1. **sekurlsa::ekeys** :
+1. **` sekurlsa::ekeys `** :
 
-   Affiche les clés d'exportation de session (session keys) qui peuvent être utilisées pour déchiffrer les communications chiffrées entre les clients et les serveurs.
+Affiche les clés d'exportation de session (session keys) qui peuvent être utilisées pour déchiffrer les communications chiffrées entre les clients et les serveurs.
 
-   **Resultat de la dernière commande ` sekurlsa::logonpasswords `**
+**Resultat de la dernière commande ` sekurlsa::logonpasswords `**
 
-   ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.009.png)
+ ![](Aspose.Words.8cb24193-fe33-4169-932b-8a96e2fc5d4d.009.png)
 
 
 
@@ -136,6 +137,6 @@ C'est le hachage SHA1 du mot de passe de l'utilisateur Administrator.
 
 - **DAPI (dpapi)** :
 
-  Les informations sous dpapi montrent que des données protégées par la Data Protection API peuvent être présentes.
+Les informations sous dpapi montrent que des données protégées par la Data Protection API peuvent être présentes.
 
 **Conclusion** : il ne reste plus qu’à se connecter en SSH à windows server 2022 pour transférer ce mot de passe et le tester
